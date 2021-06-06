@@ -65,12 +65,7 @@ class InquirerControl(FormattedTextControl):
         def append(index, choice):
             selected = (index == self.selected_option_index)
 
-            @if_mousedown
-            def select_item(mouse_event):
-                # bind option with this index to mouse event
-                self.selected_option_index = index
-                self.answered = True
-                get_app().exit(result=self.get_selection()[0])
+            
 
             if isinstance(choice[0], Separator):
                 tokens.append(('class:separator', '  %s\n' % choice[0]))
