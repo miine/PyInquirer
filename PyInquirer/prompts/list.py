@@ -122,7 +122,7 @@ def question(message, **kwargs):
         if ic.answered:
             tokens.append(('class:answer', ' ' + ic.get_selection()[0]))
         else:
-            tokens.append(('class:instruction', ' (Use arrow keys)'))
+            tokens.append(('class:instruction', ''))
         return tokens
 
     # assemble layout
