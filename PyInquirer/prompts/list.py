@@ -170,6 +170,11 @@ def question(message, **kwargs):
         ic.answered = True
         event.app.exit(result=ic.get_selection()[1])
 
+    @kb.add('c-a', eager=True)
+    def set_answer(event):
+        ic.answered = True
+        event.app.exit(result="Add Task")
+
     return Application(
         layout=Layout(layout),
         key_bindings=kb,
