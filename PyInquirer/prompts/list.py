@@ -65,7 +65,7 @@ class InquirerControl(FormattedTextControl):
         def append(index, choice):
             selected = (index == self.selected_option_index)
 
-            
+        
             def select_item(mouse_event):
                 # bind option with this index to mouse event
                 self.selected_option_index = index
@@ -178,6 +178,6 @@ def question(message, **kwargs):
     return Application(
         layout=Layout(layout),
         key_bindings=kb,
-        mouse_support=True,
+        mouse_support=False,
         style=style
     )
