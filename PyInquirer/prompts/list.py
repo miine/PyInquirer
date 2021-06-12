@@ -178,7 +178,7 @@ def question(message, **kwargs):
     @kb.add('c-d', eager=True)
     def set_answer(event):
         ic.answered = True
-        event.app.exit(result="Delete Task - %"%ic.choices[ic.selected_option_index])
+        event.app.exit(result="Delete Task - %"%ic.choices[ic.selected_option_index][0])
 
     return Application(
         layout=Layout(layout),
