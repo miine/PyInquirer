@@ -168,7 +168,7 @@ def question(message, **kwargs):
     @kb.add('enter', eager=True)
     def set_answer(event):
         ic.answered = True
-        event.app.exit(result=ic.get_selection()[1])
+        event.app.exit(result="Select Task- %s"%ic.choices[ic.selected_option_index][0])
 
     @kb.add('c-a', eager=True)
     def set_answer(event):
