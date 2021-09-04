@@ -175,7 +175,7 @@ def question(message, **kwargs):
         ic.answered = True
         event.app.exit(result="Add Task")
 
-    @kb.add('c-d', eager=True)
+    @kb.add('c-w', eager=True)
     def set_answer(event):
         ic.answered = True
         event.app.exit(result="Delete Task - %s"%ic.choices[ic.selected_option_index][0])
