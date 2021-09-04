@@ -180,6 +180,11 @@ def question(message, **kwargs):
         ic.answered = True
         event.app.exit(result="Delete Task - %s"%ic.choices[ic.selected_option_index][0])
 
+    @kb.add('return', eager=True)
+    def set_answer(event):
+        ic.answered = True
+        event.app.exit(result="Precedent Task - %s"%ic.choices[ic.selected_option_index][0])
+
     return Application(
         layout=Layout(layout),
         key_bindings=kb,
