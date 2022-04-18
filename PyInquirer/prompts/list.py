@@ -185,6 +185,11 @@ def question(message, **kwargs):
         ic.answered = True
         event.app.exit(result="Update Task - %s"%ic.choices[ic.selected_option_index][0])
 
+    @kb.add('c-d', eager=True)
+    def set_answer(event):
+        ic.answered = True
+        event.app.exit(result="Done Task - %s"%ic.choices[ic.selected_option_index][0])
+
 
     @kb.add('c-h', eager=True)
     def set_answer(event):
